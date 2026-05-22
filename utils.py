@@ -26,20 +26,20 @@ def cabecalho_sistema():
 #leitura de dados
 
 def ler_numero(mensagem, minimo=None, maximo=None):
-          #le um numeor inteiro do usuario
+          #le um numero inteiro do usuario
           #tem try/except pra não quebrar se a pessoa digitar letra
     while True:
         try:
             numero = int(input(mensagem))
             if minimo is not None and numero < minimo:
-                print(" [!] numeor muito pequeno, tente de novo.")
+                print(" [!] numero muito pequeno, tente de novo.")
                 continue
             if maximo is not None and numero > maximo:
                 print(" [!] numero muito grande, tente de novo.")
                 continue
             return numero
         except ValueError:
-            print(" [!] isso não é um numeoro valido! tente de novo")
+            print(" [!] isso não é um numero valido! tente de novo")
 
 def ler_texto(mensagem):
                  #le um texto e não deixa ficar vazio
@@ -53,7 +53,7 @@ def escolher_da_lista(titulo, opcoes):
        print(titulo)
        for i in range(len(opcoes)):
            print(f"  {i+1}. {opcoes[i]}")
-       escolha = ler_numero(" escolha o numero: ", minimo=1, maximo=len(opcoes))
+       escolha = ler_numero(" Escolha o número: ", minimo=1, maximo=len(opcoes))
        return opcoes[escolha-1]
 
 #exibição de filmes
@@ -62,8 +62,8 @@ def mostrar_filme(filme):
         #mostrar as informaçoes de um filme formatadas na tela7
     status_icone = "[OK]" if filme['status'] == 'Disponivel' else "[--]"
     print(f" ID: {filme['id']}  |  {status_icone}  {filme['status']}")
-    print(f" titulo :  {filme['titulo']}")
-    print(f"  genero : {filme['genero']}  |  ano:  {filme['ano']}")
+    print(f" Titulo :  {filme['titulo']}")
+    print(f"  Gênero : {filme['genero']}  |  ano:  {filme['ano']}")
     if filme.get('total_alugueis', 0) > 0:
-        print(f"  alugado: {filme['total_alugueis']} vez(es)")
+        print(f"  Alugado: {filme['total_alugueis']} vez(es)")
  

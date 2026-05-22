@@ -9,7 +9,7 @@ fila_de_reservas = []
 historico_devolucoes = []
 #opçoes disponiveis no sistema
 status_possiveis = ("Disponivel", "Indisponivel")
-generos_possiveis = ("Acao", "Comedia", "Drama", "Terror", "Ficcao Cientifica", "Romance", "Animacao", "Documentario", "Outro")
+generos_possiveis = ("Ação", "Comedia", "Drama", "Terror", "Ficcão Cientifica", "Romance", "Animacão", "Documentario", "Outro")
 
 #contador pra gerar p id de cada filme
 contador_id = 1

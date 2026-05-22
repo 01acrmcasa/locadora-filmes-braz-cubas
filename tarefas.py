@@ -23,7 +23,7 @@ def cadastrar_filme():
             utils.pausar()
             return   #sai da função sem precisar cadastrar
           
-    genero = utils.escolher_da_lista("\n  Qual o genero?", dados.generos_possiveis)  #importa do utils
+    genero = utils.escolher_da_lista("\n  Qual o gênero?", dados.generos_possiveis)  #importa do utils
     ano = utils.ler_numero("\n  Ano do filme: ", minimo=1888, maximo=2100)
     #cria o dicionario com as informaçoes do filme que o usario vai colocar
     novo_filme = {
@@ -52,7 +52,7 @@ def listar_filmes():
     utils.mostrar_titulo("Catalogo de Filmes") #importa função do utils para mostrar função do tirulo do menu
 
     if len(dados.lista_filmes) == 0:   #caso a lista tenha 0 filmes mostra a mensagem e retorna sem fazer mais nada
-        print("  Ainda nao tem nenhum filme cadastrado.")
+        print("  Ainda não tem nenhum filme cadastrado.")
         utils.pausar()
         return
 
@@ -100,8 +100,8 @@ caso não encontre vai exibir a mensagem que não encontrou
 '''
 def listar_por_genero():
     #filtra os filmes disponiveis por genero PROCURA POR GENERO
-    utils.mostrar_titulo("Filmes por Genero")
-    genero = utils.escolher_da_lista("\n  Escolha o genero:", dados.generos_possiveis)
+    utils.mostrar_titulo("Filmes por gênero")
+    genero = utils.escolher_da_lista("\n  Escolha o gênero:", dados.generos_possiveis)
     print()
 
     encontrou = False
@@ -111,7 +111,7 @@ def listar_por_genero():
             utils.linha()
             encontrou = True
     if not encontrou:
-        print(f"  Nenhum filme disponivel no genero '{genero}'.")
+        print(f"  Nenhum filme disponivel no gênero '{genero}'.")
     utils.pausar()
 
 #reservar filme - fila
@@ -245,7 +245,7 @@ def ver_historico():
     utils.mostrar_titulo("Historico de Devolucoes")
 
     if len(dados.historico_devolucoes) == 0:   # a leitura é: se a pilha tiver vazia, avisa e sai
-        print("  Ainda nao houve nenhuma devolucao.")
+        print("  Ainda não houve nenhuma devolucão.")
         utils.pausar()
         return
     print("  Os mais recentes: \n")
