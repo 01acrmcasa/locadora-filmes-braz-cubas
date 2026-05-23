@@ -5,7 +5,7 @@ import utils #importa as funçoes e informaçoes do util e dados
 #cadastrar filme
 #-----------------------
 '''
-ela pega as informaçoes do filme pelo o que o usuario coloca, faz uma avaliação pra nao duplicar
+Ela pega as informaçoes do filme pelo o que  usuario digita, verifica se ja existe antes de cadastrar pra nao duplicar
 monta um discionario com os dados
 e insere na lista de filmes, ja com o contador de IDs 
 
@@ -44,8 +44,8 @@ def cadastrar_filme():
 #listar filmes
 #--------------------------------
 '''
-olha se tem filmes cadastrados e se sim exibe cada um com suas infomações
-e no final mostra um resumo com o total de filmes, quantos estão disponiveis e quantos estão alugados
+Mostra todos os filmes e um resumo no final
+com o total de filmes, quantos estão disponiveis e quantos estão alugados
 '''
 def listar_filmes():
     #mostra todos os filmes cadastrados com o status de cada um
@@ -74,7 +74,7 @@ def listar_filmes():
 #pesquisa por titulo 
 #-------------------------------------------
 '''
-ela recebe um trecho do filme que o usuario coloca, e procura na lista um filme que tenha o trecho que foi digitado
+Ela recebe um trecho do filme que o usuario coloca, e procura na lista um filme que tenha o trecho que foi digitado
 e mostra a mensagem caso encontrar ou não
 '''
 def buscar_filme():
@@ -95,8 +95,8 @@ def buscar_filme():
 #lista por genero 
 #----------------------------------
 '''
-o usuario escolhe um genero e vai exibir apenas os filmes que são daquele genero com status
-caso não encontre vai exibir a mensagem que não encontrou
+Usuario escolhe um genero e so aparece os filmes daquele genero
+e so mostra os disponiveis
 '''
 def listar_por_genero():
     #filtra os filmes disponiveis por genero PROCURA POR GENERO
@@ -117,8 +117,8 @@ def listar_por_genero():
 #reservar filme - fila
 #-------------------------------------------
 '''
-coloca o cliente no final da fila do filme que ela quer, e pega o primeiro da fila e tenta efetivar o aluguel
-se não tiver disponivel, devolve o cliente para o inicio do filme e tenta efetivar o aluguel 
+Coloca o cliente no final da fila do filme que ela quer, e pega o primeiro da fila e tenta efetivar o aluguel
+se não tiver disponivel, devolve para a fila
 '''
 def reservar_filme():
     #adiciona o cliente no final da fila de reservas
@@ -207,9 +207,8 @@ def ver_fila():
 #devolução - usa a pilha
 #--------------------------------------
 '''
-nesse o ultimo a ser devolvido aparece primeiro no historico
-esse sistema verifica se o filme estava realmente alugado, muda o status para disponivel
-e mostra no historico de tras pra frente, mostrando as devoluçoes mais recentes no topo da lista
+Registra a devolucao, muda o status pra disponivel
+e empilha no historico
 '''
 def devolver_filme():
     #registra a devolucao de um filme
@@ -262,9 +261,9 @@ def ver_historico():
 #faturamento
 #------------------------------------------------
 '''
-aqui mostra o total de alugueis feitos, o valor de um so e o total acumulado
-tambem mostra os filmes que ja foram alugados pelo menos uma vez e os que não sairam ainda 
-é tipo o painel de controle da locadora
+Aqui mostra o total de alugueis feitos, o valor de um só é o total acumulado
+também mostra os filmes que ja foram alugados pelo menos uma vez e os que não sairam ainda 
+é o painel de controle da locadora
 '''
 def ver_faturamento():
     #mostra o resumo de movimentacoes e faturamento da locadora
