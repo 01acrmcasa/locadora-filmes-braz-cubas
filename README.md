@@ -1,18 +1,18 @@
-# sistema de locadora de filmes
+# Sistema de locadora de filmes
 
 tema: locadora de filmes
 disciplina: programação de computadores
 alunos: marcelo, ana, daniel 
 periodo/turma: 1 semetre - analise e desenvolvimento de 
 
-## 1. descrição do projeto
-o projeto é sobre um sistema de locadora de filmes que roda pelo terminal, nele da pra cadastrar filmes, ver catalogo, reservar, alugar e devolver.
-o sistema tambem tem um contador de movimentações que calcula o faturamento da da locadora, usamos tambem o os conceitos de fila, pilha, discionario, lista e tupla
+## 1. Descrição do projeto
+O projeto é sobre um sistema de locadora de filmes que roda pelo terminal. Nele dá pra cadastrar filmes, ver catálogo, reservar, alugar e devolver.
+O sistema também tem um contador de movimentações que calcula o faturamento da locadora. Usamos também os conceitos de fila, pilha, dicionário, lista e tupla.
 
-## 2. explicação
+## 2. Explicação
 
-### fila (fifo)
-a fila funciona tipo fila de lojas, quem chega primeiro vai ser atendido primeiro, no nosso sistema a gente usa a 'fila_de_reservas' pra guardar os clientes que querem alugar o filme, quando alguem reserva ai entra no final com '.append().'. ai na hora de processar o aluguel, a gente usa .pop(0) que tira o primeiro da fila, que é quem estava esperando a masi tempo
+### Fila (fifo)
+A fila funciona tipo fila de lojas, quem chega primeiro vai ser atendido primeiro. No nosso sistema a gente usa a fila_de_reservas pra guardar os clientes que querem alugar o filme. Quando alguém reserva, entra no final com .append(). Na hora de processar o aluguel, a gente usa .pop(0) que tira o primeiro da fila, que é quem estava esperando há mais tempo.
 
 ```
 #cliente entra no final da fila
@@ -22,8 +22,8 @@ dados.fila_de_reservas.append((filme['titulo'], cliente))
 titulo_filme, nome_cliente = dados.fila_de_reservas.pop(0)
 ```
 
-### pilha (lifo)
-a pilha pode comparar com uma pilha de pratos, o ultimo que entra é o primeiro que sai, a gente usa o 'historico_devolucoes' pra guardar as devoluçoes e cada devolução é empilhada com '.append()'. pra mostrar do mais recente pro mais antigo a gente usa o 'reversed()'
+### Pilha (lifo)
+A pilha pode ser comparada com uma pilha de pratos, o último que entra é o primeiro que sai. A gente usa o historico_devolucoes pra guardar as devoluções e cada devolução é empilhada com .append(). Pra mostrar do mais recente pro mais antigo a gente usa o reversed().
 
 ```
 #empilha a devolucao no topo
@@ -38,8 +38,8 @@ for registro in reversed(dados.historico_devolucoes):
     print(f"  '{registro['titulo']}' devolvido por {registro['cliente']}")
 ```
 
-### discionario
-cadas filme é salvo como um discionario que gursa os dados em formato de chave ou valor, e desse jeito da pra acessar qualquer dados do filme pelo nome, tipo  'filme['titulo']` ou `filme['status']`, tambem colocamos o campos 'total_alugueis' dentro do discionario de cada filme pra saber quantas vezes cada titulo foi alugado
+### Dicionario
+Cada filme é salvo como um dicionário que guarda os dados em formato de chave e valor. Dessa forma dá pra acessar qualquer dado do filme pelo nome, tipo filme['titulo'] ou filme['status']. Também colocamos o campo total_alugueis dentro do dicionário de cada filme pra saber quantas vezes cada título foi alugado.
 
 ```
 novo_filme = {
@@ -52,8 +52,8 @@ novo_filme = {
 }
 ```
 
-### lista e tupla
-a lista a gente usa quando os dados precisa mudar que ai da pra adicionar e remover os itens, ja a tupla não pode mudar por que são fixos, nos usamos a lista pra guardar os filmes, a fila e o historico por que esses dados mudam, usamos tupla pra guardar os status e generos possiveis por que esses valores não devem mudar
+### Lista e tupla
+A lista a gente usa quando os dados precisam mudar, aí dá pra adicionar e remover itens. Já a tupla não pode mudar porque os valores são fixos. Usamos a lista pra guardar os filmes, a fila e o histórico porque esses dados mudam. Usamos tupla pra guardar os status e gêneros possíveis porque esses valores não devem mudar.
 
 ```
 #tupla: nao pode alterar, valores fixos
@@ -65,70 +65,75 @@ lista_filmes = []
 lista_filmes.append(novo_filme)
 ```
 
-### modularização
-a gente dividiu o projeto em 4 arquivos: o dados,py é onde fica as variaveis compartilhadas entre os arquivos, tipo a lista de filmes e os contadores, a fila, a pilha, as tuplas e os contadores de faturamento, o tarefas.pytem as funçoes principais do sistema como cadastrar, listar, alugar, devolver e ver faturament, o utils.py fica a parte do design onde mostra o menu, leitura de dados e ler as entradas do usuario, o main.py e o arquivo principal tipo o ponto de entrada que tem o while True do menu pra chamar as outras funcoes
+### Modularização
+A gente dividiu o projeto em 4 arquivos. O dados.py é onde ficam as variáveis compartilhadas entre os arquivos, tipo a lista de filmes, a fila, a pilha, as tuplas e os contadores de faturamento. O tarefas.py tem as funções principais do sistema como cadastrar, listar, alugar, devolver e ver faturamento. O utils.py fica a parte do design, onde mostra o menu e faz a leitura das entradas do usuário. O main.py é o arquivo principal, o ponto de entrada que tem o while True do menu pra chamar as outras funções.
 
-### 3. como rodar
+### 3. Como rodar
  - precisa ter o a versão python 3.10 ou mais recente
  - comando para executar: python mains.py
  - não são nescesarias blibiotecas externas 
 
- ## 4. funcionalidades
- - Cadastrar filme com titulo, genero, ano e status
-- ver catalogo com status de cada filme
+ ## 4. Funcionalidades
+- Cadastrar filme com título, gênero, ano e status
+- Ver catálogo com status de cada filme
 - Fila de reservas FIFO
 - Pilha de devolucoes LIFO
 - alugar filme (muda status pra Indisponivel)
 - devolver filme (muda status pra Disponivel)
 extra
 - Buscar filme pelo nome
-- ver filmes disponiveis por genero
-- Historico de devolucoes com contador de posicao
+- Ver filmes disponíveis por gênero
+- Histórico de devoluções com contador de posição
 - Contador de movimentacoes e faturamento da locadora
 
 ## 5. Dificuldades e Aprendizados
-No começo a maior dificuldade foi entender como o fifo e o lifo funcionavam de verdade no código, a gente sabia a teoria mas ficou confuso na hora de usar, o `.pop()` e o `.pop(0)` tambem causou uma grande confusão pra nos, porque sao parecidos mas fazem coisas diferentes, sem o zero tira o ultimo elemento e com o zero tira o primeiro, erramos isso algumas vezes antes de entender, outra dificuldade foi separar o codigo em 4 arquivos sem misturar as coisas, ficamos na duvida varias vezes sobre onde colocar cada funcao, ai com o tempo foi ficando mais facil de entender, Aprendemos bastante sobre organizar um projeto maior do que um arquivo so e tambem entendemos melhor quando usar lista e quando usar tupla, e tambem a dificuldade na organização do codigo foi bem complicada pois as linhas se misturavam e nos não conseguimos separar as funçoes, tipo o que aquela função faz no sistema, acabava tambem misturando então foi a nossa maior dificuldade
+No começo a maior dificuldade foi entender como o FIFO e o LIFO funcionavam de verdade no código. A gente sabia a teoria mas ficou confuso na hora de usar. O .pop() e o .pop(0) também causaram uma grande confusão pra gente, porque são parecidos mas fazem coisas diferentes: sem o zero tira o último elemento e com o zero tira o primeiro. Erramos isso algumas vezes antes de entender. Outra dificuldade foi separar o código em 4 arquivos sem misturar as coisas. Ficamos na dúvida várias vezes sobre onde colocar cada função, mas com o tempo foi ficando mais fácil. Aprendemos bastante sobre organizar um projeto maior do que um arquivo só, entendemos melhor quando usar lista e quando usar tupla, e a organização geral do código que no começo era bem complicada porque as funções se misturavam e ficava difícil saber o que cada uma fazia no sistema.
 
 
 SISTEMA DE LOCADORA DE FILMES
 ==============================
 
-                          [INICIO]
-                              |
-                              v
-                      +--------------+
-                      | main.py      |
-                      | exibe menu   |
-                      +--------------+
-                              |
-          .-------------------+-------------------.
-          |          |          |         |        |
-          v          v          v         v        v
-      [FILMES]   [RESERVAS] [ALUGUEIS] [DEVOLUC] [RELAT]
-          |          |          |         |        |
-     cadastrar   reservar   processar  devolver  faturamento
-      listar      ver fila   aluguel   historico
-      buscar
-      genero
-          |          |          |         |        |
-          '-------------------+-------------------'
-                              |
-                              v
-                    usuario digitou 0?
-                      |           |
-                     nao          sim
-                      |           |
-                      v           v
-                  [MENU]        [FIM]
+                    [INICIO]
+                       |
+                       v
+               +---------------+
+               |    main.py    |
+               |  exibe menu   |
+               +---------------+
+                       |
+       +---------------+---------------+
+       |               |               |
+       v               v               v
+  [FILMES]        [RESERVAS]      [DEVOLUCOES]
+       |               |               |
+  cadastrar        reservar         devolver
+  listar           ver fila         historico
+  buscar           processar
+  por genero       aluguel
+       |               |               |
+       +-------+-------+-------+-------+
+                       |
+                       v
+               +---------------+
+               |  [RELATORIO]  |
+               |  faturamento  |
+               +---------------+
+                       |
+                       v
+               usuario digitou 0?
+               /               \
+             nao               sim
+              |                 |
+              v                 v
+           [MENU]            [FIM]
+
 
 
 ------------------------------------------------------
 ESTRUTURA DE ARQUIVOS
 ------------------------------------------------------
 
-  main.py ---------> tarefas.py --> dados.py
+main.py ---------> tarefas.py --> dados.py
       \                              (listas, filas,
        \-> utils.py                   pilha, constantes)
           (inputs, prints, menus)
-
-,,,
