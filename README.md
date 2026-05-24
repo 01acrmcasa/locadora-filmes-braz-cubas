@@ -92,7 +92,7 @@ No começo a maior dificuldade foi entender como o FIFO e o LIFO funcionavam de 
 
 SISTEMA DE LOCADORA DE FILMES
 ==============================
-
+```
                     [INICIO]
                        |
                        v
@@ -137,3 +137,4 @@ main.py ---------> tarefas.py --> dados.py
       \                              (listas, filas,
        \-> utils.py                   pilha, constantes)
           (inputs, prints, menus)
+```
