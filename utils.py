@@ -59,7 +59,7 @@ def escolher_da_lista(titulo, opcoes):
 #exibição de filmes
 
 def mostrar_filme(filme):
-        #mostrar as informaçoes de um filme formatadas na tela7
+        #mostrar as informaçoes de um filme formatadas na tela
     status_icone = "[OK]" if filme['status'] == 'Disponivel' else "[--]"
     print(f" ID: {filme['id']}  |  {status_icone}  {filme['status']}")
     print(f" Titulo :  {filme['titulo']}")
