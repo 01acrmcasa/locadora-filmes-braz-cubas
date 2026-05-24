@@ -11,7 +11,7 @@ historico_devolucoes = []
 status_possiveis = ("Disponivel", "Indisponivel")
 generos_possiveis = ("Ação", "Comedia", "Drama", "Terror", "Ficcão Cientifica", "Romance", "Animacão", "Documentario", "Outro")
 
-#contador pra gerar p id de cada filme
+#contador pra gerar id de cada filme
 contador_id = 1
 
 #contador de movimentação (alugueis feitos) para faturamento

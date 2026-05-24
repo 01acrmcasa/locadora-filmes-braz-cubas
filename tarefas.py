@@ -131,7 +131,7 @@ def reservar_filme():
         return            #verifica se tem algum filme cadastrado.
 
     titulo = utils.ler_texto("  Nome do filme que quer reservar: ")
-    filme = pegar_filme_por_titulo(titulo)   #pede o nome do filme 
+    filme = achar_filme(titulo)   #pede o nome do filme 
 
     if filme is None:
         print("\n  [!] Filme nao encontrado.")
@@ -159,7 +159,7 @@ def processar_aluguel():
         return
     #retira o primeiro da fila 
     titulo_filme, nome_cliente = dados.fila_de_reservas.pop(0)
-    filme = pegar_filme_por_titulo(titulo_filme)
+    filme = achar_filme(titulo_filme)
 
     if filme is not None:
         if filme['status'] == "Indisponivel":
@@ -215,7 +215,7 @@ def devolver_filme():
     #empilha no historico com .append() que é o mesmo esquema da seresvar_filme()
     utils.mostrar_titulo("Registrar Devolucao")
     titulo = utils.ler_texto("  Nome do filme devolvido: ")
-    filme = pegar_filme_por_titulo(titulo) 
+    filme = achar_filme(titulo) 
 
     if filme is None:
         print("\n  [!] Filme nao encontrado no sistema.")
@@ -299,8 +299,9 @@ def ver_faturamento():
 '''
 ele usa a lista de filmes para procurar um que tenha aquele titulo (ignorando letras maiusculas ou minusculas)
  e retorna com o dicionario completo do filme se achar ou None se não achar
-'''
-def pegar_filme_por_titulo(titulo):                    #procura um filme pelo titulo e retorna o dicionario dele
+'''          
+
+def achar_filme(titulo):                    #procura um filme pelo titulo e retorna o dicionario dele
     for filme in dados.lista_filmes:                      #retorna None se nao achar
         if filme['titulo'].lower() == titulo.lower():
             return filme

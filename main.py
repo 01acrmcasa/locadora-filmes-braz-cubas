@@ -1,7 +1,7 @@
 #ponto de entrada do sistema
 #grupo: marcelo, ana, daniel - 1 semestre de ads
 
-import utils #imposrta as funções e informações do util e tarefas 
+import utils #importa as funções e informações do util e tarefas 
 import tarefas 
 
 #função que vai mostrar o menu com todas as opções na tela
@@ -67,7 +67,7 @@ def main():
         elif opcao == 10:
             tarefas.ver_faturamento()
         elif opcao == 0:
-            print("\n encerramento o sistema... ate mais!\n")
+            print("\n Encerrando o sistema... ate mais!\n")
             break #termina o while true, enquanto seja verdadeiro
 main()
 
