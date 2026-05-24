@@ -5,7 +5,7 @@ import utils #importa as funçoes e informaçoes do util e dados
 #cadastrar filme
 #-----------------------
 '''
-Ela pega as informaçoes do filme pelo o que  usuario digita, verifica se ja existe antes de cadastrar pra nao duplicar
+Pega as informaçoes do filme pelo o que  usuario digita, verifica se ja existe antes de cadastrar pra não duplicar
 monta um discionario com os dados
 e insere na lista de filmes, ja com o contador de IDs 
 
@@ -41,7 +41,7 @@ def cadastrar_filme():
     print(f"\n  [OK] Filme '{titulo}' cadastrado com sucesso!")
     utils.pausar()
 
-#listar filmes
+#Listar filmes
 #--------------------------------
 '''
 Mostra todos os filmes e um resumo no final
@@ -71,7 +71,7 @@ def listar_filmes():
           f"Disponiveis: {disponiveis}  |  Alugados: {indisponiveis}")
     utils.pausar()
 
-#pesquisa por titulo 
+#Pesquisa por titulo 
 #-------------------------------------------
 '''
 Ela recebe um trecho do filme que o usuario coloca, e procura na lista um filme que tenha o trecho que foi digitado
@@ -85,7 +85,7 @@ def buscar_filme():
     encontrou = False
     for f in dados.lista_filmes:
         if busca.lower() in f['titulo'].lower():  #lower() transforma tudo em minusculo antes de comparar
-            utils.linha()                         #"in" verifica se o que o usuario sigitou esta contido dentro do tirulo
+            utils.linha()                         #"in" verifica se o que o usuario digitou esta contido dentro do titulo
             utils.mostrar_filme(f)                
             encontrou = True
     if not encontrou:
@@ -211,7 +211,7 @@ Registra a devolucao, muda o status pra disponivel
 e empilha no historico
 '''
 def devolver_filme():
-    #registra a devolucao de um filme
+    #registra a devolucão de um filme
     #empilha no historico com .append() que é o mesmo esquema da seresvar_filme()
     utils.mostrar_titulo("Registrar Devolucao")
     titulo = utils.ler_texto("  Nome do filme devolvido: ")
